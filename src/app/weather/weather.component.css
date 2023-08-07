@@ -1,0 +1,274 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.container-fluid {
+  width: 100%; /* Set the container to fill the entire width of the viewport */
+  max-width: 1200px; /* Set a maximum width for larger screens */
+  margin: 60px auto;
+  padding: 10px;
+}
+.inputs 
+{
+    padding: 1rem 0;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    background: white;
+    align-items: center;
+}
+
+
+.inputs input[type="text"] 
+{
+  height: 40px;
+  width: 300px;
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 10px;
+  border: none;
+  background-color: transparent;
+  border: 2px solid #c2c2c2;
+  border-radius: 2px;
+  margin-right: 4px;
+}
+
+
+
+.button {
+    padding: 15px 25px;
+    margin-left: 25px;
+    font-size: 24px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: #04AA6D;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+  }
+
+  .button:hover {background-color: #3e8e41}
+
+  .button:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+
+
+.display 
+{
+    text-align: center;
+    width: 100%;
+    color: #16a864;
+    height: 100%;
+}
+.wrapper 
+{
+    margin: 0 9rem;
+    background-color: white;
+    height: 100%;
+    margin: 50px auto;
+    border-radius: 100%;
+}
+
+.wrapper h2
+{
+    padding: 5px 0;
+    text-align: center;
+    background: transparent;
+    color: rgb(231, 11, 11);
+    font-family: sans-serif;
+}
+.wrapper p
+{
+    margin:20px 50px;
+    margin-right: 20px;
+    text-align: left;
+    color: #04214c;
+    font-size:23px;
+}
+.wrapper h2 span
+{
+    font-size: 26px;
+    color: #9beefb;
+}
+.wrapper p span
+{
+    color: #f4780d;
+    font-size: 25px;
+}
+
+.weather-info {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff; 
+    border-radius: 25px;
+    font-size: 24px;
+    text-align: center;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+    transition: background-image 1s ease;
+  }
+  
+  @keyframes glowEffect {
+    0%, 100% {
+      box-shadow: 0 0 20px 5px #fdd835;
+    }
+    50% {
+      box-shadow: 0 0 30px 10px #fdd835;
+    }
+  }
+  
+  @keyframes rainEffect {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 100px 100px;
+    }
+    to {
+      top: 120%;
+    }
+  }
+  
+  @keyframes cloudsMoving {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: -200px 0;
+    }
+  }
+  
+  @keyframes clearSkyEffect {
+    0%, 100% {
+      background-position: 0 0;
+    }
+    50% {
+      background-position: 100px 100px;
+    }
+  }
+
+  @keyframes hazeEffect {
+    0%, 100% {
+      background-position: 0 0;
+    }
+    50% {
+      background-position: 100px 100px;
+    }
+  }
+  
+  @keyframes mistEffect {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: -200px 0;
+    }
+  }
+
+  /* Additional styles for other weather effects */
+  .sun-glow {
+    width: 150px;
+    height: 100%;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .rain-effect {
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(45deg,#00c4d2, #322c5a,#2136f4, #237fd5);
+    background-size: 3px 3px;
+    left: 50%;
+    transform: translateX(-50%);
+    position: relative;
+    overflow: hidden;
+    
+  }
+
+  .clouds-moving {
+    
+    width: 300px;
+    height: 150px;
+    position: absolute;
+    top: auto;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: cloudsMoving 10s infinite linear;
+  }
+
+  .app-footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+  }
+  
+  .app-footer p {
+    margin: 0;
+  }
+
+ 
+
+    /* Add media query for smaller screens */
+@media (max-width: 768px) {
+  .container-fluid {
+    padding: 5px;
+  }
+
+  .inputs {
+    flex-direction: column;
+    padding: 1rem 0 1rem 0;
+  }
+
+  .inputs input[type="text"] {
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 10px;
+  }
+
+  .button {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .wrapper {
+    margin: 0 5rem;
+  }
+
+  .sun-glow {
+    display: none; /* Hide the sun-glow element on smaller screens */
+  }
+
+  .rain-effect {
+    display: none; /* Hide the rain-effect element on smaller screens */
+  }
+
+  .clouds-moving {
+    display: none; /* Hide the clouds-moving element on smaller screens */
+  }
+}
+
+
+  
+ 
+  
+  
+  
+  
+  

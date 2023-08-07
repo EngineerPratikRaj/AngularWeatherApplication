@@ -1,0 +1,22 @@
+<div class="container-fluid">
+  <section class="inputs">
+    <input type="text" [value]="city" (input)="onCityInputChange($event)" placeholder="Enter city">
+    <button class="button" (click)="getWeather()">Get Weather</button>
+  </section>
+
+  <section class="display">
+    <div class="wrapper">
+      <div *ngIf="weatherData" class="weather-info" [ngStyle]="getWeatherGradient()">
+        <h2>{{ weatherData.name }}</h2>
+        <p>{{ weatherData.weather[0].description }}</p>
+        <p>Temperature: {{ weatherData.main.temp }} °C</p>
+        <div *ngIf="isSunny()" class="sun-glow"></div>
+        <div *ngIf="isRainy()" class="rain-effect"></div>
+        <div *ngIf="isCloudy()" class="clouds-moving"> </div>
+        <div *ngIf="isClearSky()" class="clearSkyEffect"></div>
+        <div *ngIf="isHaze()" class="hazeEffect"></div>
+        <div *ngIf="isMist()" class="mistEffect"></div>
+      </div>
+    </div>
+  </section>
+</div>
